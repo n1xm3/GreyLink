@@ -158,7 +158,7 @@ if ! unzip -o "$ARCHIVE" -d "$DEST" >/dev/null 2>&1; then
 fi
 
 # --------------------------------------------------
-# 7. Configure and install
+# 7. Configure and install BebInEx
 # --------------------------------------------------
 RUN_SCRIPT="$DEST/run_bepinex.sh"
 find "$DEST/BepInEx" -type d -exec chmod 755 {} \;
@@ -167,7 +167,6 @@ chmod 644 "$DEST/changelog.txt"
 chmod 644 "$DEST/.doorstop_version"
 chmod 644 "$DEST/libdoorstop.so"
 chmod 755 "$RUN_SCRIPT"
-sed -i '1s|^#!.*|#!/usr/bin/env bash|' "$RUN_SCRIPT"
 sed -i "s/^executable_name=\".*\"/executable_name=\"$EXEC_NAME\"/" "$RUN_SCRIPT"
 if ! (cd "$DEST" && ./run_bepinex.sh >/dev/null 2>&1 ); then
     echo "Initialization failed."
