@@ -51,7 +51,7 @@ DEST="$FOUND"
 # 2. Confirm Removal
 # --------------------------------------------------
 echo
-echo "GreyLink components will be removed from:"
+echo "BepInEx and GreyHackMessageHook.dll will be removed from:"
 echo "$DEST"
 echo
 read -p "Continue? (y/N): " ans
@@ -61,7 +61,7 @@ ans=$(echo "$ans" | tr '[:upper:]' '[:lower:]')
 # --------------------------------------------------
 # 3. Remove Components
 # --------------------------------------------------
-echo "Removing BepInEx and GreyLink components..."
+echo "Removing BepInEx and GreyHackMessageHook.dll"
 rm -rf \
     "$DEST/BepInEx" \
     "$DEST/changelog.txt" \
@@ -71,5 +71,5 @@ rm -rf \
 echo "Cleanup complete."
 echo
 echo "If you previously set Steam launch options,"
-echo "remove them manually in:"
+echo "Remove them manually in:"
 echo "Steam → Grey Hack → Properties → Launch Options"
