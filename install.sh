@@ -131,7 +131,7 @@ ans=$(echo "$ans" | tr '[:upper:]' '[:lower:]')
 # --------------------------------------------------
 # 5. Download
 # --------------------------------------------------
-echo "downloading $ARCHIVE"
+echo "downloading BepInEx"
 curl -fsSL -o "$ARCHIVE" "$URL"
 if [ ! -s "$ARCHIVE" ]; then
     echo "Download failed."
@@ -141,7 +141,7 @@ if ! command -v unzip >/dev/null 2>&1; then
     echo "unzip is required but not installed."
     exit 1
 fi
-echo "downloading $HOOK_ARCHIVE"
+echo "downloading GreyHackMessageHook.dll"
 curl -fsSL -o "$HOOK_ARCHIVE" "$HOOK_URL"
 if [ ! -s "$HOOK_ARCHIVE" ]; then
     echo "Failed to download GreyHackMessageHook.dll"
@@ -181,7 +181,7 @@ echo "Installation of BepInEx complete."
 # --------------------------------------------------
 PLUGIN_DIR="$DEST/BepInEx/plugins"
 mkdir -p "$PLUGIN_DIR"
-echo "installing $HOOK_ARCHIVE"
+echo "installing GreyHackMessageHook.dll"
 if ! install -m 644 "$HOOK_ARCHIVE" "$PLUGIN_DIR/$HOOK_FILE"; then
     echo
     echo "ERROR: Failed to install $HOOK_FILE."
